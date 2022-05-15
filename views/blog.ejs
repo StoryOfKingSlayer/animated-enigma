@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./templates/head.ejs')%>
+
+
+    <body>
+        <%- include('./templates/header.ejs')%>
+
+
+            <section class="intro">
+                <div class="container intro-container">
+                    <div class="intro-wrapp-contetnt">
+                        <div class="intro-title">
+                            Tell us your story!
+                        </div>
+                        <div class="intro-title">
+                            Let the whole world see it!
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="articles">
+                <div class="container articles-container">
+                    <div class="articles-wrapp-content">
+                        <div class="column-articles">
+                            <% allPosts.forEach(el=> { %>
+                                <article class="article">
+                                    <div class="article-wrapp-img">
+                                        <img src="<%= el.post_img%>" alt="">
+                                    </div>
+                                    <div class="article-wrapp-text">
+                                        <a href="/blog/<%= el.id_posts%>">
+                                            <h2 class="article-title">
+                                                <%= el.title%>
+                                            </h2>
+                                        </a>
+                                        <p class="article-par">
+                                            <%= el.descr %>
+                                        </p>
+                                        <div class="article-author">
+                                            Erik Brown | <%= el['post_category.name_category']%>
+                                        </div>
+                                    </div>
+                                </article>
+                                <% }) %>
+                        </div>
+                        <div class="column-articles-filters">
+                            <div class="search-wrapp-content">
+                                <div class="search-wrapp-input">
+                                    <input class="search-input" type="text" placeholder="Search Keyword">
+                                    <img src="./images/icon-search.svg" alt="">
+                                </div>
+                                <button class="search-btn">
+                                    search
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    </body>
+
+</html>

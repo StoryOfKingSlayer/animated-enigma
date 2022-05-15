@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./templates/head.ejs')%>
+
+
+    <body>
+        <%- include('./templates/header.ejs')%>
+
+
+            <section class="intro">
+                <div class="container intro-container">
+                    <div class="intro-wrapp-contetnt">
+                        <div class="intro-title">
+                            Tell us your story!
+                        </div>
+                        <div class="intro-title">
+                            Let the whole world see it!
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="last-news">
+                <div class="container">
+                    <div class="last-news-content">
+                        <% lastPosts.forEach(el=>{
+                            %>
+                            <article class="last-news-article">
+                                <div class="last-news-date">
+                                    11.02.2021 / in <span class="last-news-category">
+                                        <%= el['post_category.name_category']%>
+                                    </span>
+                                </div>
+                                <h2 class="last-news-title article-title">
+                                    <%= el.title%>
+                                </h2>
+                                <p class="last-news-par article-par">
+                                    <%= el.descr.substring(0, 160)%>
+                                </p>
+                                <a href="/blog/<%= el.id_posts%>" class="link-read-more">Read More</a>
+                            </article>
+                            <% })%>
+                    </div>
+                </div>
+            </section>
+            <section class="information">
+                <div class="container">
+                    <div class="information-wrapp">
+                        <img src="./images/img-general/man.jpg" alt="">
+                        <div class="information-text">
+                            <p class="information-par">Thus, the strengthening and development of the structure ensures
+                                a wide range of (specialists) participation in the formation of mass participation
+                                systems. Everyday practice shows that constant quantitative growth and the scope of our
+                                activity entails the process of implementation and modernization of the development
+                                model. Comrades! the new model of organizational activity plays an important role in
+                                shaping further directions of development. On the other hand, the strengthening and
+                                development of the structure entails a process of implementation and modernization
+                                corresponding to the conditions of activation. The task of the organization, especially
+                                the further development of various forms of activity, allows us to assess the value of
+                                new proposals.</p>
+                            <p class="information-quote">
+                                <span class="information-quote-bold">Quote:</span> the strengthening and development of
+                                the structure ensures a wide range of
+                                (specialists) participation in the formation of mass participation systems.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    </body>
+
+</html>

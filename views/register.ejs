@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./templates/head.ejs')%>
+
+
+    <body>
+        <%- include('./templates/header.ejs')%>
+            <form action="/auth/registration" method="post">
+                <input id="l" name="login" type="text">
+                <input name="pass" type="text">
+                <input id="d" type="submit">
+                <% if (typeof messege !=='undefined' ) { %>
+                    <%= messege %>
+                    <% } %>
+            </form>
+    </body>
+
+</html>
+
+<!-- <script src="public/js/lib/jquery.js"></script>
+<script src="public/js/l.js"></script> -->
